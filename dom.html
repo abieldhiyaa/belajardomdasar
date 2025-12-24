@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubah Warna</title>
+
+    <style>
+        body {
+            text-align: center;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body >
+
+    
+
+    <h1 id="nama">M. Abiel Dhiya Ulhaq</h1>
+    <button  onclick="ubah()"> Ubah Warna</button>
+    <button onclick="teks()"> Ubah Teks</button>
+    <button onclick="background()">Ubah Warna Background</button> <br><br>
+
+    <h1 id="pilih">Bogor, 19 Januari 2006</h1>
+    <input type="color" onchange="pilihwarna(this.value)">
+
+    <script>
+       let abiel = document.getElementById("nama");
+       let index = 0;
+       const gantiwarna =  ["darkgreen", "darkblue", "pink", "gold", "green", "chocolate", "blue", "white", "red"];
+
+        function ubah() {
+            abiel.style.color = gantiwarna[index];
+            index = (index + 1) % gantiwarna.length;
+        }
+        
+        function teks() {
+            document.getElementById("nama").innerHTML = "Pria Misterius";
+        }
+
+        function background() {
+            abiel.style.backgroundColor = gantiwarna[index];
+            index = (index + 1) % gantiwarna.length;
+        }            
+
+        function pilihwarna(warnaDipilih) {
+            document.getElementById("pilih").style.color = warnaDipilih;
+        }
+    
+         
+
+    </script>
+</html>
